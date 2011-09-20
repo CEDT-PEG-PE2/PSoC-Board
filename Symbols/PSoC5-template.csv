@@ -1,0 +1,155 @@
+# This is the template file for creating symbols with tragesym						
+# every line starting with '#' is a comment line.						
+# save it as text file with tab separated cells and start tragesym						
+						
+[options]						
+# wordswap swaps labels if the pin is on the right side an looks like this:						
+#   "PB1 (CLK)". That's useful for micro controller port labels						
+# rotate_labels rotates the pintext of top and bottom pins						
+#   this is useful for large symbols like FPGAs with more than 100 pins						
+# sort_labels will sort the pins by it's labels						
+#   useful for address ports, busses, ...						
+wordswap	yes					
+rotate_labels	yes					
+sort_labels	yes					
+generate_pinseq	yes					
+sym_width	5000					
+pinwidthvertical	400					
+pinwidthhorizontal	400					
+						
+[geda_attr]						
+# name will be printed in the top of the symbol						
+# if you have a device with slots, you'll have to use slot= and slotdef=						
+# use comment= if there are special information you want to add						
+version	20060113 1					
+name	PsoC 5 100pin					
+device	PsoC					
+refdes	U?					
+footprint	100TQFP-PSOC					
+description	Symbol for the 100pin PsoC5 part					
+documentation	http://www.cedt.iisc.ernet.in/people/students/kabhijit/					
+author	PE-Group CEDT					
+numslots	0					
+#slot	1					
+#slotdef	1:					
+#slotdef	2:					
+#slotdef	3:					
+#slotdef	4:					
+dist-license	GPL					
+use-license	GPL					
+#comment						
+						
+[pins]						
+# tabseparated list of pin descriptions						
+#						
+# pinnr is the physical number of the pin						
+# seq is the pinseq= attribute, leave it blank if it doesn't matter						
+# type can be (in, out, io, oc, oe, pas, tp, tri, clk, pwr)						
+# style can be (line,dot,clk,dotclk,none). none if only want to add a net						
+# posit. can be (l,r,t,b) or empty for nets						
+# net specifies the name of the net. Vcc or GND for example.						
+# label represents the pinlabel.						
+#	negation lines can be added with "\_" example: \_enable\_ 					
+#	if you want to write a "\" use "\\" as escape sequence					
+#						
+#pinnr	seq	type	style	posit.	net	label
+71		io	line	l		P0[0] GPIO, OpAmp2out
+72		io	line	l		P0[1] GPIO, OpAmp0out
+73		io	line	l		P0[2] GPIO, OpAmp0+
+74		io	line	l		P0[3] GPIO, OpAmp0-/Extref0
+76		io	line	l		P0[4] GPIO, OpAmp2+
+77		io	line	l		P0[5] GPIO, OpAmp2-
+78		io	line	l		P0[6] GPIO, IDAC0
+79		io	line	l		P0[7] GPIO, IDAC2
+20		io	line	l		JTAG P1[0] TMS, SWDIO, GPIO
+21		io	line	l		JTAG P1[1] TCK, SWDCK, GPIO
+22		io	line	l		P1[2] conf_\XRES, GPIO
+23		io	line	l		JTAG P1[3] TDO, SWV, GPIO
+24		io	line	l		JTAG P1[4] TDI, GPIO
+25		io	line	l		JTAG P1[5] nTRST, GPIO
+30		io	line	r		P1[6] GPIO
+31		io	line	r		P1[7] GPIO
+53		io	line	r		P12[0] SIO, I2C1: SCL
+54		io	line	r		P12[1] SIO, I2C1: SDA
+67		io	line	r		P12[2] SIO
+68		io	line	r		P12[3] SIO
+4		io	line	r		P12[4] I2C0: SCL, SIO
+5		io	line	r		P12[5] I2C0: SDA, SIO
+32		io	line	r		P12[6] SIO
+33		io	line	r		P12[7] SIO
+43		io	line	r		P15[0] MHz XTAL: Xo, GPIO
+44		io	line	r		P15[1] MHz XTAL: Xi, GPIO
+55		io	line	r		P15[2] GPIO, kHz XTAL: Xo
+56		io	line	r		P15[3] GPIO, kHz XTAL: Xi
+93		io	line	r		P15[4] GPIO
+94		io	line	r		P15[5] GPIO
+37		io	line	r		P15[6] USBIO, D+, SWDIO
+38		io	line	r		P15[7] USBIO, D-, SWDCK
+95		io	line	r		P2[0] GPIO
+96		io	line	r		P2[1] GPIO
+97		io	line	r		P2[2] GPIO
+98		io	line	r		P2[3] GPIO, TRACECLK
+99		io	line	r		P2[4] GPIO, TRACEDATA[0]
+1		io	line	r		P2[5] TRACEDATA[1], GPIO
+2		io	line	r		P2[6] TRACEDATA[2], GPIO
+3		io	line	r		P2[7] TRACEDATA[3], GPIO
+45		io	line	l		P3[0] IDAC1, GPIO
+46		io	line	l		P3[1] IDAC3, GPIO
+29		io	line	l		P3[2] OpAmp3-/Extref1, GPIO
+47		io	line	l		P3[3] OpAmp3+, GPIO
+48		io	line	l		P3[4] OpAmp1-, GPIO
+49		io	line	l		P3[5] OpAmp1+, GPIO
+51		io	line	l		P3[6] GPIO, OpAmp1out
+52		io	line	l		P3[7] GPIO, OpAmp3out
+69		io	line	l		P4[0] GPIO
+70		io	line	l		P4[1] GPIO
+80		io	line	l		P4[2] GPIO
+81		io	line	l		P4[3] GPIO
+82		io	line	l		P4[4] GPIO
+83		io	line	l		P4[5] GPIO
+84		io	line	l		P4[6] GPIO
+85		io	line	l		P4[7] GPIO
+16		io	line	r		P5[0] GPIO
+17		io	line	r		P5[1] GPIO
+18		io	line	r		P5[2] GPIO
+19		io	line	r		P5[3] GPIO
+34		io	line	r		P5[4] GPIO
+35		io	line	r		P5[5] GPIO
+36		io	line	r		P5[6] GPIO
+27		io	line	r		P5[7] GPIO
+89		io	line	r		P6[0] GPIO
+90		io	line	r		P6[1] GPIO
+91		io	line	r		P6[2] GPIO
+92		io	line	r		P6[3] GPIO
+6		io	line	r		P6[4] GPIO
+7		io	line	r		P6[5] GPIO
+8		io	line	r		P6[6] GPIO
+9		io	line	r		P6[7] GPIO
+15		in	line	t		 \XRES
+11		pwr	line	t		 Ind
+28		pas	none	b		 NC
+42		pas	none	b		 NC
+57		pas	none	b		 NC
+58		pas	none	b		 NC
+59		pas	none	b		 NC
+60		pas	none	b		 NC
+61		pas	none	b		 NC
+62		pas	none	b		 NC
+13		pwr	line	t		 Vbat
+12		pwr	line	t		 Vboost
+63		pwr	line	t		 Vcca
+41		pwr	line	t		 Vccd
+86		pwr	line	t		 Vccd
+65		pwr	line	t		 Vdda
+39		pwr	line	t		 Vddd
+88		pwr	line	t		 Vddd
+75		pwr	line	r		 Vddio0
+26		pwr	line	r		 Vddio1
+100		pwr	line	r		 Vddio2
+50		pwr	line	r		 Vddio3
+64		pwr	line	b		 Vssa
+10		pwr	line	b		 Vssb
+14		pwr	line	b		 Vssd
+40		pwr	line	b		 Vssd
+66		pwr	line	b		 Vssd
+87		pwr	line	b		 Vssd
